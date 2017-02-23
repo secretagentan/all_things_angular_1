@@ -437,7 +437,9 @@ We will need to create a data property to represent if we want the names shown, 
       vm.showNames = true;
 
       vm.addName = function() {
+        
 ...
+      }
 ```
 
 We can use the `ng-show`/`ng-hide` directives to show/hide elements based upon a truthy/falsey expression:
