@@ -24,7 +24,7 @@
     </ul>
     Extra Names:
     <ul>
-      <li ng-repeat="name in ctrl.extraNames">{{name | lowercase}}</li>
+      <li ng-repeat="name in ctrl.extraNames">{{name | lowercasef}}</li>
     </ul>
     <button class="btn btn-success" ng-click="ctrl.addName()">Add Name</button>
     <br>
@@ -32,6 +32,13 @@
     <button class="btn btn-info" ng-click="ctrl.showNames = !ctrl.showNames">Show/Hide Names</button>
   </div>
 
+  <div>
+  <h2>Gem</h2>
+  <ul>
+    <li ng-repeat="(key, value) in ctrl.gem">{{key}}: {{value}}</li>
+  </ul>
+  <button class="btn" ng-show="canPurchase in ctrl.gem">Add to Cart</button>
+  </div>
 
   <script src="js/app.js"></script>
 </body>

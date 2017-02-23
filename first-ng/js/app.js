@@ -15,6 +15,13 @@ angular.module('myApp', [])
     vm.addName = function() {
       if (vm.extraNames.length) vm.names.push(vm.extraNames.shift());
     };
+
+    vm.gem = {
+      Name: 'Ruby',
+      Price: '$1,000,000,000',
+      Description: 'Red',
+      canPurchase: true
+    }
   });
 
 
