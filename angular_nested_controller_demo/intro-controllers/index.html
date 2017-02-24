@@ -1,9 +1,46 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="IntroAngular">
 <head>
-  <title></title>
+  <meta charset="utf-8">
+  <title>Intro to Controllers</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
 
+<body>
+  <h1>Intro to Controllers</h1>
+
+  <h2>@Home</h2>
+  <div ng-controller="HomeController as home">
+    <div>Test: 1 + 1 = {{1+1}}</div>
+    <div>Home Test: {{home.test}}</div>
+    <div>Car Test: {{car.test}}</div>
+    <br>
+    <button class="btn btn-warning" ng-click="home.counter()">Counter: {{home.count}}</button>
+
+    <h2>@Car [nested in Home]</h2>
+    <div ng-controller="CarController as car">
+      <div>Home Test: {{home.test}}</div>
+      <div>Car Test: {{car.test}}</div>
+      <br>
+      <h4>Car Desc:</h4>
+      <p>Make: {{car.car.Make}}</p>
+      <p>Model: {{car.car.Model}}</p>
+      <br>
+      <h4>Other Vehicles:</h4>
+      <div ng-repeat="c in car.cars">
+        <p>Make: {{c.Make}}</p>
+        <p>Model: {{c.Model}}</p>
+        <br>
+      </div>
+
+    </div>
+  </div>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/controllers/HomeController.js"></script>
+  <script src="js/controllers/CarController.js"></script>
 </body>
 </html>

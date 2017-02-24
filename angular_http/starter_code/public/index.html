@@ -18,7 +18,7 @@
         <li ng-repeat="president in vm.all">
           <strong>{{president.name}}</strong> <em>({{president.start}} - {{president.end}})</em>
           <button>Uncovered?</button>
-          <button class="destroy">X</button>
+          <button ng-click="vm.deletePresident(president)" class="destroy">X</button>
         </li>
       </ul>
 
@@ -39,7 +39,7 @@
         </div>
 
         <div>
-          <input class="sub-button" type="submit" value="Add President">
+          <input ng-keypress="vm.addPresident()" class="sub-button" type="submit" value="Add President">
         </div>
       </form>
 
